@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.summary = "An interface to the libmemcached C client."
   s.homepage = "http://evan.github.com/evan/memcached/"
 
-  s.files = Dir.chdir(__dir__) do
+  s.files = Dir.chdir(File.expand_path(File.dirname(__FILE__))) do
     `git ls-files -z`.split("\x0").grep(%r{^(lib|ext|vendor)/}) + %w(LICENSE README.md CHANGELOG)
   end
   s.extensions = ["ext/memcached/extconf.rb"]
